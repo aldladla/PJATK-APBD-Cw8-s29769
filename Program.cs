@@ -8,8 +8,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
+
 builder.Services.AddDbContext<HospitalContext>(options =>
-    options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Szpital;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IPatientService, PatientService>();
 
