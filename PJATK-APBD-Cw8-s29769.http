@@ -1,0 +1,15 @@
+@PJATK_APBD_Cw8_s29769_HostAddress = http://localhost:5238
+
+GET {{PJATK_APBD_Cw8_s29769_HostAddress}}/weatherforecast/
+Accept: application/json
+### Pobierz wszystkich pacjentów (Zadanie 2 - bez filtrowania)
+### Przypisz łóżko pacjentowi (Zadanie 3)
+POST http://localhost:5238/api/patients/90010112345/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-05-20T14:00:00",
+  "to": "2026-05-30T10:00:00",
+  "bedType": "Standard",
+  "ward": "Kardiologia"
+}
